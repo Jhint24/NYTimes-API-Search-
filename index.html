@@ -119,9 +119,27 @@ font-weight: bolder;
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
-  $("#run-search").submit(function(event) {
-  alert( "Handler for .submit() called." );
-  event.preventDefault();
+
+
+var apiKey = "7d38c914bec44d119e19acc3c93fced5";
+
+
+// Built by LucyBot. www.lucybot.com
+var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+var searchText = $("#search-term").attr("value");
+
+url += '?' + $.param({
+  'api-key': "7d38c914bec44d119e19acc3c93fced5",
+  'q': searchText,
+  'begin_date':begin_date
+});
+$.ajax({
+  url: url,
+  method: 'GET',
+}).done(function(result) {
+  console.log(result);
+}).fail(function(err) {
+  throw err;
 });
 </script>
 
