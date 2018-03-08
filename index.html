@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>New York Times Search</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+body  {
+  background-color:whitesmoke;
+}
+.search-boxes  {
+  border: grey 1px solid;
+  margin-top: 20px;
+}
+.my-buttons {
+text-align: center;
+margin-top: 25px;
+margin: 25px;
+font-weight: bolder;
+}
+.search-results {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bolder;
+  color: black;
+}
+
+  </style>
+</head>
+<body>  
+    <div class="container">
+        <div class="jumbotron" style="background-color: grey; color: white;">
+        <h1 class="text-center"><strong> New York Times Search</strong></h1>
+        </div>
+        <div class="jumbotron" style="background-color: grey; color: white; margin-top: 5%;">
+    <div class="row">
+        <div class="col-sm-6 search-boxes">
+              <br>
+            <div class="panel panel-primary">
+                <div class="panel-body">
+                  <form role="form">
+                    <div class="form-group">
+                      <label for="search">Search Term:</label>
+                      <input type="text" class="form-control" id="search-term">
+                    </div>
+      
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 search-boxes">
+              <br>
+            <div class="panel panel-primary">
+                <div class="panel-body">
+                  <div class="form-group">
+                    <label for="pwd">Number of Records to Retrieve:</label>
+                    <select class="form-control" id="num-records-select">
+                  <option value="1">1</option>
+                  <option value="5" selected>5</option>
+                  <option value="10">10</option>
+                </select>
+                  </div>
+                    </div>
+      
+                </div>
+            </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 search-boxes">
+              <br>
+            <div class="panel panel-primary">
+                <div class="panel-body">
+                    <div class="form-group">
+                      <label for="start-year">Start Year (Optional):</label>
+                      <input type="text" class="form-control" id="start-year">
+                    </div>
+      
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 search-boxes">
+              <br>
+            <div class="panel panel-primary">
+                <div class="panel-body">
+                  <div class="form-group">
+                    <label for="end-year">End Year (Optional):</label>
+                    <input type="text" class="form-control" id="end-year">
+                  </div>
+                    </div>
+      
+                </div>
+            </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12  text-center">
+      <button type="submit" class="btn btn-lg btn-outline-info my-buttons" id="run-search">Search</button>
+      <button type="button" class="btn btn-lg btn-outline-info my-buttons" id="clear-all">Clear Results</button>
+      </div>
+      </div>
+  </div>
+<div class="jumbotron" style="background-color: grey; color: white; margin-top: 5%;">
+  <div class="row">
+    <div class="col-sm-12">
+      <br>
+
+
+      <div class="panel panel-primary">
+
+
+        <div class="panel-heading">
+          <h3 class="panel-title search-results"><strong>Articles</strong></h3>
+        </div>
+        <div class="panel-body" id="well-section">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+  $("#run-search").submit(function(event) {
+  alert( "Handler for .submit() called." );
+  event.preventDefault();
+});
+</script>
+
+</body>
+
